@@ -18,8 +18,6 @@ export async function POST(req: Request) {
 
   const data = await openaiRes.json();
 
-  console.log("API Key:" + process.env.OPENAI_API_KEY);
-
   const reply = data.choices?.[0]?.message?.content || "No response.";
 
   return NextResponse.json({ reply });
