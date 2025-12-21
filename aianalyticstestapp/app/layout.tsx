@@ -46,6 +46,7 @@ export default function RootLayout({
                 })(window,document,'script','dataLayer','GTM-K4SQR86R');`,
             }}
           />
+          <script src="https://ai-analytics-7tka.onrender.com/gtmtracker.js?project_id=aianalyticstest"></script>
         </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
