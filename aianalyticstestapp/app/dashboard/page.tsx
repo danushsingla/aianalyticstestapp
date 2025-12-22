@@ -30,10 +30,24 @@ export default function Dashboard() {
       const data = await response.json();
 
       setMessages((prev) => [...prev, { role: "assistant", content: data.reply ?? "(No reply)" }]);
+
+      await logToSupabase(text, data.reply ?? "(No reply)");
     } catch (error) {
       console.error("Error sending message:", error);
     } finally {
       setIsSending(false);
+    }
+  }
+
+  async function logToSupabase(user_message: string, ai_message: string) {
+    try {
+      await fetch("/api/supabase", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: { user_message, ai_message } }),
+      });
+    } catch (error) {
+      console.error("Error logging to Supabase:", error);
     }
   }
 
