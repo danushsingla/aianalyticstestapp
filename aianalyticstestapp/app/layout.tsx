@@ -47,7 +47,7 @@ export default function RootLayout({
             }}
           />
           <script src="https://ai-analytics-7tka.onrender.com/gtmtracker.js"
-                  public-api-key="aia_pk___bhDiob-jjPB3RFBqW7og"></script>
+                  public-api-key="aia_pk_G_H01aDp3kUGqXnQ5x0NIQ"></script>
         </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
