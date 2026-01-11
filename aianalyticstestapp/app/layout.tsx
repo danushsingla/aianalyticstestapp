@@ -34,33 +34,10 @@ export default function RootLayout({
   return (
     <ClerkProvider afterSignOutUrl="/" signInForceRedirectUrl="/dashboard">
       <html lang="en">
-        <head>
-          <Script
-            id="gtm-script"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','GTM-K4SQR86R');`,
-            }}
-          />
-          <script src="https://ai-analytics-7tka.onrender.com/gtmtracker.js"
-                  public-api-key="aia_pk_G_H01aDp3kUGqXnQ5x0NIQ"></script>
-        </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <noscript>
-              <iframe
-                src="https://www.googletagmanager.com/ns.html?id=GTM-K4SQR86R"
-                height="0"
-                width="0"
-                style={{ display: "none", visibility: "hidden" }}
-              ></iframe>
-            </noscript>
             <SignedOut>
               <SignInButton>
                 <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
