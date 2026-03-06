@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 import {
   ClerkProvider,
   SignInButton,
@@ -10,6 +9,7 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
+import { Repairian } from "@repairian/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,32 +35,12 @@ export default function RootLayout({
     <ClerkProvider afterSignOutUrl="/" signInForceRedirectUrl="/dashboard">
       <html lang="en">
         <head>
-          <Script
-            id="gtm-script"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','GTM-K4SQR86R');`,
-            }}
-          />
-          <script src="https://ai-analytics-7tka.onrender.com/gtmtracker.js"
-                  public-api-key="aia_pk_a776yZM_u4xuU2nz1L1K4w"></script>
         </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <Repairian publicApiKey="aia_pk_tzoSGBKVJTIaMBGQCh_CuQ" />
           <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <noscript>
-              <iframe
-                src="https://www.googletagmanager.com/ns.html?id=GTM-K4SQR86R"
-                height="0"
-                width="0"
-                style={{ display: "none", visibility: "hidden" }}
-              ></iframe>
-            </noscript>
             <SignedOut>
               <SignInButton>
                 <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
