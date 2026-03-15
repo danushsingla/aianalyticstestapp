@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/dsing/Apps/aianalyticstestapp/aianalyticstestapp/app/api/supabase/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\nimport { createClient } from \"@supabase/supabase-js\";\r\n\r\nconst supabaseUrl = process.env.SUPABASE_URL!;\r\nconst supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY!;\r\n\r\nexport async function POST(req: Request) {\r\n    // Contains user_message and ai_message\r\n  const { message } = await req.json();\r\n\r\n  // Based on type, add this to Supabase table\r\n  const supabase = createClient(supabaseUrl, supabaseServiceKey);\r\n\r\n    await supabase.from(\"data\").insert([\r\n        {\r\n            user: message.user_message,\r\n            ai: message.ai_message,\r\n        },\r\n    ]);\r\n\r\n  return NextResponse.json({ status: \"logged\" });\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;AACA;;;AAEA,MAAM,cAAc,QAAQ,GAAG,CAAC,YAAY;AAC5C,MAAM,qBAAqB,QAAQ,GAAG,CAAC,oBAAoB;AAEpD,eAAe,KAAK,GAAY;IACnC,uCAAuC;IACzC,MAAM,EAAE,OAAO,EAAE,GAAG,MAAM,IAAI,IAAI;IAElC,4CAA4C;IAC5C,MAAM,WAAW,IAAA,sNAAY,EAAC,aAAa;IAEzC,MAAM,SAAS,IAAI,CAAC,QAAQ,MAAM,CAAC;QAC/B;YACI,MAAM,QAAQ,YAAY;YAC1B,IAAI,QAAQ,UAAU;QAC1B;KACH;IAEH,OAAO,sKAAY,CAAC,IAAI,CAAC;QAAE,QAAQ;IAAS;AAC9C"}}]
+}

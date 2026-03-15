@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useAmonContainer } from "@amon-analytics/next";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -12,6 +13,9 @@ export default function ChatBubble() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isSending, setIsSending] = useState(false);
+
+  // Set the containerRef of the ChatBubble for Amon
+  const containerRef = useAmonContainer();
 
   async function sendMessage() {
     const text = input.trim();
@@ -60,7 +64,7 @@ export default function ChatBubble() {
 
       {/* Chat panel */}
       {open && (
-        <div id="aianalytics-chat-panel" className="fixed bottom-24 right-6 z-50 w-96 rounded-2xl border border-neutral-800 bg-neutral-950 shadow-2xl">
+        <div ref={containerRef} className="fixed bottom-24 right-6 z-50 w-96 rounded-2xl border border-neutral-800 bg-neutral-950 shadow-2xl">
           <div className="flex items-center justify-between border-b border-neutral-800 p-3">
             <span className="text-sm font-medium">AI Assistant</span>
             <button

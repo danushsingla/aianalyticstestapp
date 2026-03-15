@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@amon-analytics/next": "0.0.2",
     "@clerk/nextjs": "^6.36.5",
     "@repairian/next": "^0.0.1",
     "@supabase/supabase-js": "^2.89.0",

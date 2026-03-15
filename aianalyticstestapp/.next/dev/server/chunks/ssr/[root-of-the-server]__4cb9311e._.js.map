@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/dsing/Apps/aianalyticstestapp/aianalyticstestapp/app/dashboard/page.tsx"],"sourcesContent":["import ChatWidget from \"@/components/ChatWidget\";\r\n\r\nexport default function Dashboard() {\r\n  return (\r\n    <div className=\"min-h-screen bg-neutral-950 text-neutral-100 p-8\">\r\n      <h1 className=\"text-2xl font-semibold mb-4\">Dashboard</h1>\r\n\r\n      <p className=\"text-neutral-400 max-w-xl\">\r\n        Welcome to your AI Analytics dashboard.  \r\n        Metrics, logs, and insights will appear here.\r\n      </p>\r\n\r\n      {/* Charts, tables, cards later */}\r\n\r\n      <ChatWidget />\r\n    </div>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;;;;;;;;AAEe,SAAS;IACtB,qBACE,oQAAC;QAAI,WAAU;;0BACb,oQAAC;gBAAG,WAAU;0BAA8B;;;;;;0BAE5C,oQAAC;gBAAE,WAAU;0BAA4B;;;;;;0BAOzC,oQAAC;;;;;;;;;;;AAGP"}}]
+}

@@ -9,7 +9,7 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
-import { Repairian } from "@repairian/next";
+import { Amon } from "@amon-analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +39,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Repairian publicApiKey="aia_pk_tzoSGBKVJTIaMBGQCh_CuQ" />
+          <Amon publicApiKey="aia_pk_zJDoo4pigoj6e7nm1PK_6A" />
           <header className="flex justify-end items-center p-4 gap-4 h-16">
             <SignedOut>
               <SignInButton>
